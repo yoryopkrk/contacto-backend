@@ -2,9 +2,11 @@
 
 Backend del formulario de contacto de [yoryopkrk.cl](https://www.yoryopkrk.cl). Expone las rutas que ya consume el frontend Angular (`ContactoService` y `MailService`):
 
-- `POST /correos/createTransport` — envia el correo de aviso (a Jorge) o de respuesta automatica (a quien escribio), segun `cualNotificacion`.
-- `POST /contactos/postContacto` — guarda el mensaje en Postgres. Publica, sin autenticacion (la usa el formulario).
-- `GET /contactos/getContactos`, `GET /contactos/allContactos`, `GET /contactos/getContacto/:id`, `PUT /contactos/putContacto/:id`, `DELETE /contactos/deleteContacto/:id` — protegidas con header `x-api-key` (ver `ADMIN_API_KEY`).
+Todas las rutas van bajo el prefijo `/api/v1`.
+
+- `POST /api/v1/correos/createTransport` — envia el correo de aviso (a Jorge) o de respuesta automatica (a quien escribio), segun `cualNotificacion`.
+- `POST /api/v1/contactos/postContacto` — guarda el mensaje en Postgres. Publica, sin autenticacion (la usa el formulario).
+- `GET /api/v1/contactos/getContactos`, `GET /api/v1/contactos/allContactos`, `GET /api/v1/contactos/getContacto/:id`, `PUT /api/v1/contactos/putContacto/:id`, `DELETE /api/v1/contactos/deleteContacto/:id` — protegidas con header `x-api-key` (ver `ADMIN_API_KEY`).
 
 ## Desarrollo local
 
