@@ -13,6 +13,7 @@ import config from '../config';
         url: configService.postgres.url,
         ssl: configService.postgres.ssl ? { rejectUnauthorized: false } : false,
         schema: configService.postgres.schema,
+        extra: { options: `-c search_path=${configService.postgres.schema}` },
         synchronize: false,
         autoLoadEntities: true,
       }),
