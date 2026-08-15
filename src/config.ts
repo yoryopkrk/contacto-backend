@@ -9,8 +9,8 @@ export default registerAs('config', () => ({
     schema: process.env.POSTGRES_SCHEMA || 'public',
   },
   mail: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-    to: process.env.MAIL_TO || process.env.MAIL_USER,
+    resendApiKey: process.env.RESEND_API_KEY,
+    from: process.env.MAIL_FROM || 'onboarding@resend.dev',
+    to: process.env.MAIL_TO,
   },
 }));

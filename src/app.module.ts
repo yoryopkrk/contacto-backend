@@ -20,9 +20,9 @@ import { MailModule } from './mail/mail.module';
         POSTGRES_URL: Joi.string(),
         DATABASE_URL: Joi.string(),
         POSTGRES_SSL: Joi.string(),
-        MAIL_USER: Joi.string().required(),
-        MAIL_PASS: Joi.string().required(),
-        MAIL_TO: Joi.string(),
+        RESEND_API_KEY: Joi.string().required(),
+        MAIL_FROM: Joi.string(),
+        MAIL_TO: Joi.string().required(),
         ADMIN_API_KEY: Joi.string().required(),
       })
         .or('POSTGRES_URL', 'DATABASE_URL')
