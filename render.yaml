@@ -6,6 +6,7 @@ services:
     plan: free
     buildCommand: npm ci && npm run build
     startCommand: npm run start:prod
+    healthCheckPath: /api/v1/health
     envVars:
       - key: NODE_VERSION
         value: 20
@@ -17,10 +18,10 @@ services:
         value: true
       - key: POSTGRES_SCHEMA
         value: contacto_bd
-      - key: MAIL_USER
+      - key: RESEND_API_KEY
         sync: false
-      - key: MAIL_PASS
-        sync: false
+      - key: MAIL_FROM
+        value: contacto@yoryopkrk.cl
       - key: MAIL_TO
         sync: false
       - key: ADMIN_API_KEY

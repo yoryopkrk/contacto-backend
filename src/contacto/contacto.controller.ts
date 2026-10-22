@@ -20,7 +20,7 @@ import { UpdateContactoDto } from './dto/update-contacto.dto';
 export class ContactoController {
   constructor(private readonly contactoService: ContactoService) {}
 
-  // Unica ruta publica: la llama el formulario de contacto del portafolio sin autenticacion.
+  // Única ruta pública: la llama el formulario de contacto del portafolio sin autenticación.
   @Throttle({ default: { limit: 5, ttl: 60000 } })
   @Post('postContacto')
   create(@Body() data: CreateContactoDto) {

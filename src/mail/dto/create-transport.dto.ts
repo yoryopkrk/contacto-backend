@@ -1,7 +1,7 @@
 import { IsEmail, IsIn, IsOptional, IsString, MinLength } from 'class-validator';
 
 export class CreateTransportDto {
-  // 0 = notificacion para Jorge, 1 = respuesta automatica para quien escribio
+  // 0 = notificación para Jorge, 1 = respuesta automática para quien escribió
   @IsIn([0, 1])
   cualNotificacion: number;
 

@@ -8,6 +8,7 @@ import config from './config';
 import { DatabaseModule } from './database/database.module';
 import { ContactoModule } from './contacto/contacto.module';
 import { MailModule } from './mail/mail.module';
+import { HealthController } from './health/health.controller';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { MailModule } from './mail/mail.module';
     ContactoModule,
     MailModule,
   ],
+  controllers: [HealthController],
   providers: [
     {
       provide: APP_GUARD,
