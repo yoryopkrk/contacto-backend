@@ -1,9 +1,11 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { Throttle } from '@nestjs/throttler';
+import { ApiTags } from '@nestjs/swagger';
 
 import { MailService } from './mail.service';
 import { CreateTransportDto } from './dto/create-transport.dto';
 
+@ApiTags('correos')
 @Controller('correos')
 export class MailController {
   constructor(private readonly mailService: MailService) {}

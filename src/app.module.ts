@@ -9,6 +9,7 @@ import { DatabaseModule } from './database/database.module';
 import { ContactoModule } from './contacto/contacto.module';
 import { MailModule } from './mail/mail.module';
 import { HealthController } from './health/health.controller';
+import { RootController } from './root.controller';
 
 @Module({
   imports: [
@@ -34,7 +35,7 @@ import { HealthController } from './health/health.controller';
     ContactoModule,
     MailModule,
   ],
-  controllers: [HealthController],
+  controllers: [HealthController, RootController],
   providers: [
     {
       provide: APP_GUARD,
