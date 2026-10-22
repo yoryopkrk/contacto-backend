@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: portafolio-backend
+    name: contacto-backend
     runtime: node
     region: ohio
     plan: free
