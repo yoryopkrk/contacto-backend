@@ -3,17 +3,21 @@ import { IsEmail, IsInt, IsOptional, IsString, MaxLength, MinLength } from 'clas
 export class CreateContactoDto {
   @IsString()
   @MinLength(3)
+  @MaxLength(100)
   nombre: string;
 
   @IsEmail()
+  @MaxLength(254)
   correo: string;
 
   @IsOptional()
   @IsString()
+  @MaxLength(30)
   telefono?: string;
 
   @IsString()
   @MinLength(1)
+  @MaxLength(5000)
   comentario: string;
 
   // Identificador corto del sitio que envia el mensaje, ej: 'portafolio', 'juego-orbital-spheres'.

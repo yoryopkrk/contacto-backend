@@ -19,6 +19,7 @@ import { RootController } from './root.controller';
       validationSchema: Joi.object({
         PORT: Joi.number(),
         CORS_ORIGINS: Joi.string().allow(''),
+        TRUST_PROXY: Joi.number().integer().min(0),
         POSTGRES_URL: Joi.string(),
         DATABASE_URL: Joi.string(),
         POSTGRES_SSL: Joi.string(),

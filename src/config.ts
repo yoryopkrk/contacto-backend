@@ -2,6 +2,7 @@ import { registerAs } from '@nestjs/config';
 
 export default registerAs('config', () => ({
   port: parseInt(process.env.PORT, 10) || 3000,
+  trustProxy: parseInt(process.env.TRUST_PROXY, 10) || 0,
   corsOrigins: (process.env.CORS_ORIGINS || '').split(',').filter(Boolean),
   postgres: {
     url: process.env.POSTGRES_URL || process.env.DATABASE_URL,

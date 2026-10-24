@@ -2,12 +2,18 @@ import { NestFactory } from '@nestjs/core';
 import { ValidationPipe, Logger, RequestMethod } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import type { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const configService = app.get(ConfigService);
   const corsOrigins = configService.get<string[]>('config.corsOrigins');
+
+  // Detras del proxy del hosting, req.ip seria la IP del proxy y el limite de peticiones contaria a
+  // todos los visitantes juntos. TRUST_PROXY = cuantos proxies hay delante (Render: 1).
+  const trustProxy = configService.get<number>('config.trustProxy');
+  if (trustProxy > 0) app.set('trust proxy', trustProxy);
 
   app.setGlobalPrefix('api/v1', {
     exclude: [

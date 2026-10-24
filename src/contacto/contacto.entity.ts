@@ -29,4 +29,8 @@ export class Contacto {
 
   @CreateDateColumn()
   createdAt: Date;
+
+  // Cuando se le envio la respuesta automatica (null = no se envio). Sirve para no repetirla.
+  @Column({ type: 'timestamp', nullable: true })
+  respuestaEnviadaAt: Date | null;
 }
